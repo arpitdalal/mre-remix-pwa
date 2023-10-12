@@ -1,5 +1,6 @@
 import { useForm } from '@conform-to/react'
 import { parse } from '@conform-to/zod'
+import { useSWEffect, LiveReload } from '@remix-pwa/sw'
 import { cssBundleHref } from '@remix-run/css-bundle'
 import {
 	json,
@@ -12,7 +13,6 @@ import {
 	Form,
 	Link,
 	Links,
-	LiveReload,
 	Meta,
 	Outlet,
 	Scripts,
@@ -239,6 +239,7 @@ function App() {
 	const matches = useMatches()
 	const isOnSearchPage = matches.find(m => m.id === 'routes/users+/index')
 	const searchBar = isOnSearchPage ? null : <SearchBar status="idle" />
+	useSWEffect()
 
 	return (
 		<Document nonce={nonce} theme={theme} env={data.ENV}>

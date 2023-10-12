@@ -1,3 +1,4 @@
+import { loadServiceWorker } from '@remix-pwa/sw'
 import { RemixBrowser } from '@remix-run/react'
 import { startTransition } from 'react'
 import { hydrateRoot } from 'react-dom/client'
@@ -9,3 +10,5 @@ if (ENV.MODE === 'production' && ENV.SENTRY_DSN) {
 startTransition(() => {
 	hydrateRoot(document, <RemixBrowser />)
 })
+
+loadServiceWorker()

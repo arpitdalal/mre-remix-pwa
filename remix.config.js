@@ -1,7 +1,7 @@
 import { flatRoutes } from 'remix-flat-routes'
 
 /**
- * @type {import('@remix-run/dev').AppConfig}
+ * @type {import('@remix-pwa/dev').WorkerConfig}
  */
 export default {
 	cacheDirectory: './node_modules/.cache/remix',
